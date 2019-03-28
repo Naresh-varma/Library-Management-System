@@ -1,0 +1,44 @@
+{
+  "name": "Book",
+  "plural": "books",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "total_Number_Copies": {
+      "type": "number",
+      "default": 10
+    },
+    "copies_Issued": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Student": {
+      "type": "hasMany",
+      "model": "Student",
+      "foreignKey": "book_Id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

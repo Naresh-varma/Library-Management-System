@@ -1,0 +1,53 @@
+{
+  "name": "Transaction",
+  "plural": "transactions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "user_Id": {
+      "type": "string",
+      "required": true
+    },
+    "book_Id": {
+      "type": "string",
+      "required": true
+    },
+    "issued_Date": {
+      "type": "date",
+      "required": true
+    },
+    "returned_Date": {
+      "type": "date"
+    },
+    "fine": {
+      "type": "number",
+      "default": 0
+    },
+    "return_By_This_Date": {
+      "type": "date",
+      "required": true
+    },
+    "isReturned": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Student": {
+      "type": "belongsTo",
+      "model": "Student",
+      "foreignKey": "user_Id"
+    },
+    "Book": {
+      "type": "belongsTo",
+      "model": "Book",
+      "foreignKey": "book_Id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

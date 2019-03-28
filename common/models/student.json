@@ -1,0 +1,32 @@
+{
+  "name": "Student",
+  "plural": "Students",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rollnumber": {
+      "type": "string"
+    },
+    "isAdmin": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "books": {
+      "type": "hasMany",
+      "model": "Book",
+      "foreignKey": "user_Id"
+    }
+  },
+  "acls": [{
+    "accessType": "*",
+    "principalId": "$everyone",
+    "principalType": "ROLE",
+    "permission": "ALLOW"
+  }],
+  "methods": {}
+}
