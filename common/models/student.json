@@ -12,6 +12,9 @@
     },
     "isAdmin": {
       "type": "boolean"
+    },
+    "userName": {
+      "type": "string"
     }
   },
   "validations": [],

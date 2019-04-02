@@ -13,6 +13,7 @@ module.exports = function(Transactions) {
         where: {
           user_Id: context.req.body.user_Id,
           book_Id: context.req.body.book_Id,
+          isReturned: false,
         }},
         function(err, transaction) {
           if (err) throw err;

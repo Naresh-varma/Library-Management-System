@@ -2,6 +2,7 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var path = require('path');
 
 var app = module.exports = loopback();
 
@@ -17,6 +18,9 @@ app.start = function() {
     }
   });
 };
+app.use(/^(?!\/api)(?!\/css)(?!\/js).+/, (req, res, next) => {
+  res.sendFile(path.join(__dirname, '..', '/client/index.html'));
+});
 app.use((rq, rs, cb) => {
   if (app.models.Book)
     console.log(app.models.Book.definition.settings.relations);
