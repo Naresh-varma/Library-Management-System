@@ -35,6 +35,10 @@
     "dataSource": "mongoDs",
     "public": false
   },
+  "RoleMapper": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
   "Student": {
     "dataSource": "mongoDs",
     "public": true
@@ -44,6 +48,10 @@
     "public": true
   },
   "Transaction": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "RoleGrant": {
     "dataSource": "mongoDs",
     "public": true
   }

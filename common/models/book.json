@@ -39,6 +39,16 @@
       "foreignKey": "book_Id"
     }
   },
-  "acls": [],
+  "acls": [{
+    "accessType": "READ",
+    "principalId": "$authenticated",
+    "principalType": "ROLE",
+    "permission": "ALLOW"
+  }, {
+    "accessType": "*",
+    "principalId": "libAdmin",
+    "principalType": "ROLE",
+    "permission": "ALLOW"
+  }],
   "methods": {}
 }

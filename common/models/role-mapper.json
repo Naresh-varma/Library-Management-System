@@ -1,0 +1,25 @@
+{
+    "name": "RoleMapper",
+    "plural": "role-mappers",
+    "base": "RoleMapping",
+    
+"relations": {
+    "students": {
+      "type": "belongsTo",
+      "model": "Student",
+      "foreignKey": "principalId"
+    },
+    "roleGrant": {
+      "type": "belongsTo",
+      "model": "RoleGrant",
+      "foreignKey": "roleId"
+    },
+    "role": {
+      "type": "belongsTo",
+      "model": "RoleGrant",
+      "foreignKey": "roleId"
+    }
+  }
+
+    
+}

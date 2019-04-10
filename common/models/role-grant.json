@@ -1,0 +1,19 @@
+{
+    "name": "RoleGrant",
+    "plural": "role-grants",
+    "base": "Role",
+    "relations": {
+        "students": {
+            "type": "hasMany",
+            "model": "Student",
+            "foreignKey": "roleId",
+            "through": "RoleMapper",
+            "keyThrough": "principalId"
+        },
+        "roleMappers": {
+            "type": "hasMany",
+            "model": "RoleMapper",
+            "foreignKey": "roleId"
+        }
+    }
+}

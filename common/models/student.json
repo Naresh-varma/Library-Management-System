@@ -25,9 +25,10 @@
       "foreignKey": "user_Id"
     }
   },
-  "acls": [{
-    "accessType": "*",
-    "principalId": "$everyone",
+  "acls": [
+  {
+    "accessType": "READ",
+    "principalId": "libAdmin",
     "principalType": "ROLE",
     "permission": "ALLOW"
   }],

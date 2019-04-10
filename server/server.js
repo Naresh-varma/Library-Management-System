@@ -1,11 +1,17 @@
 'use strict';
 
 var loopback = require('loopback');
+var lbctx = require('loopback-context');
 var boot = require('loopback-boot');
 var path = require('path');
 
 var app = module.exports = loopback();
-
+app.use((req, res, next) => {
+  // console.log(req);
+  console.log(req.accessToken);
+  // req.app.models.Rol+eGrant.getRoles({ principalId: args.user.id }, { returnOnlyRoleNames: true }, (err, roles) => {
+  next();
+});
 app.start = function() {
   // start the web server
   return app.listen(function() {
@@ -23,8 +29,8 @@ app.use(/^(?!\/api)(?!\/css)(?!\/js).+/, (req, res, next) => {
 });
 app.use((rq, rs, cb) => {
   if (app.models.Book)
-    console.log(app.models.Book.definition.settings.relations);
-  cb();
+    // console.log(app.models.Book.definition.settings.relations);
+    cb();
 });
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
